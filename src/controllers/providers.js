@@ -37,9 +37,20 @@ const remove = (req, res) => {
       .catch((err) => res.status(500).json({ msg: `Error: ${err}` }));
 };
 
+const unDeleted = (req, res) => {
+    const { id } = req.params;
+    Providers.findByIdAndUpdate(id, { isDeleted: false }, { new: true })
+      .then((data) => {
+        if (data.length === 0) return res.status(404).json({ msg: `Provider not found by ID: ${id}` });
+        return res.json({ msg: "Provider undeleted", data });
+      })
+      .catch((err) => res.status(500).json({ msg: `Error: ${err}` }));
+};
+
 module.exports = {
     getAll,
     create,
     update,
-    remove
+    remove,
+    unDeleted
 };
