@@ -3,7 +3,7 @@ const products = require('../controllers/products')
 
 router.get("/", products.getAll)
 router.post("/",  products.create);
-router.put("/", products.update)
+router.put("/:id", products.update)
 router.patch("/:id", products.remove)
 module.exports = router;
 
