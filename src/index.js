@@ -62,6 +62,7 @@ const app = express()
 
 const router = require("./routes")
 
+
 app.use(express.static("public"));
 app.set("json spaces", 2)
 

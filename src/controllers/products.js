@@ -1,4 +1,3 @@
-const products = require("../products");
 const Products = require("../products");
 
 const getAll = (req, res) => {
@@ -21,8 +20,8 @@ const update = (req, res) => {
     const { id } = req.params;
     Products.findByIdAndUpdate(id, req.body, { new: true })
       .then((data) => {
-        if (data.length === 0) return res.status(404).json({ msg: `Profile not found by ID: ${id}` });
-        return res.json({ msg: "Profile updated", data });
+        if (data.length === 0) return res.status(404).json({ msg: `Product not found by ID: ${id}` });
+        return res.json({ msg: "Product updated", data });
       })
       .catch((err) => res.status(500).json({ msg: `Error: ${err}` }));
 };
@@ -31,8 +30,8 @@ const remove = (req, res) => {
     const { id } = req.params;
     Products.findByIdAndUpdate(id, { isDeleted: true }, { new: true })
       .then((data) => {
-        if (data.length === 0) return res.status(404).json({ msg: `Profile not found by ID: ${id}` });
-        return res.json({ msg: "Profile deleted", data });
+        if (data.length === 0) return res.status(404).json({ msg: `Product not found by ID: ${id}` });
+        return res.json({ msg: "Product deleted", data });
       })
       .catch((err) => res.status(500).json({ msg: `Error: ${err}` }));
 };
