@@ -53,12 +53,14 @@
 //   console.log(`Example app listening on port ${port}`)
 // })
 
-require("dotenv").config();     //variable de entorno, obtiene el databaseurl y el puerto aca
+//require("dotenv").config();     //variable de entorno, obtiene el databaseurl y el puerto aca
 const cors = require("cors")
 const express = require('express')
 const route = require('routers')
 const mongoose = require('mongoose')
 const app = express()
+const PORT = 3000
+DATABASE_URL = "mongodb+srv://pablo:12344321@cluster0.mshrsa4.mongodb.net/?retryWrites=true&w=majority"
 
 const router = require("./routes")
 
@@ -70,10 +72,10 @@ app.set("json spaces", 2)
 app.use(express.json());
 app.use(router)
 
-mongoose.connect(process.env.DATABASE_URL)
+mongoose.connect("mongodb+srv://pablo:12344321@cluster0.mshrsa4.mongodb.net/?retryWrites=true&w=majority")
   .then(() => {
     console.log("🟢 DB Connected");
-    app.listen({ port: process.env.PORT }, () => {
+    app.listen({ port: 3000 }, () => {
       console.log(`🚗 Server running on port ${process.env.PORT}`);
     });
   })
@@ -82,3 +84,5 @@ mongoose.connect(process.env.DATABASE_URL)
     console.log("🔴 There was an error on the DB connection method.");
     console.log(err);
   });
+
+  
