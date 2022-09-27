@@ -75,8 +75,8 @@ app.use(router)
 mongoose.connect("mongodb+srv://pablo:12344321@cluster0.mshrsa4.mongodb.net/?retryWrites=true&w=majority")
   .then(() => {
     console.log("🟢 DB Connected");
-    app.listen({ port: 3000 }, () => {
-      console.log(`Server running on port 3000`);
+    app.listen({ port: 80 }, () => {
+      console.log(`Server running on port 80`);
     });
   })
 
