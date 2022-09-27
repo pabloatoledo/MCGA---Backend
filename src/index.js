@@ -59,7 +59,7 @@ const express = require('express')
 const route = require('routers')
 const mongoose = require('mongoose')
 const app = express()
-const PORT = 3000
+//const PORT = 3000
 DATABASE_URL = "mongodb+srv://pablo:12344321@cluster0.mshrsa4.mongodb.net/?retryWrites=true&w=majority"
 
 const router = require("./routes")
