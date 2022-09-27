@@ -76,7 +76,7 @@ mongoose.connect("mongodb+srv://pablo:12344321@cluster0.mshrsa4.mongodb.net/?ret
   .then(() => {
     console.log("🟢 DB Connected");
     app.listen({ port: 3000 }, () => {
-      console.log(`🚗 Server running on port ${process.env.PORT}`);
+      console.log(`🚗 Server running on port ${3000}`);
     });
   })
 
