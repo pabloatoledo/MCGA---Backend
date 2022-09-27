@@ -54,6 +54,7 @@
 // })
 
 //require("dotenv").config();     //variable de entorno, obtiene el databaseurl y el puerto aca
+const http = require('http')
 const cors = require("cors")
 const express = require('express')
 const route = require('routers')
@@ -75,9 +76,9 @@ app.use(router)
 mongoose.connect("mongodb+srv://pablo:12344321@cluster0.mshrsa4.mongodb.net/?retryWrites=true&w=majority")
   .then(() => {
     console.log("🟢 DB Connected");
-    app.listen({ port: 4000 }, () => {
-      console.log(`Server running on port 80`);
-    });
+    //app.listen({ port: 4000 }, () => {
+    //   console.log(`Server running on port 80`);
+    // });
   })
 
   .catch((err) => {
@@ -85,4 +86,5 @@ mongoose.connect("mongodb+srv://pablo:12344321@cluster0.mshrsa4.mongodb.net/?ret
     console.log(err);
   });
 
-  
+const httpServer = http.createServer(app)
+httpServer.listen(4000, () => console.log("Hola mundo"))  
