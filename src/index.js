@@ -76,12 +76,12 @@ mongoose.connect("mongodb+srv://pablo:12344321@cluster0.mshrsa4.mongodb.net/?ret
   .then(() => {
     console.log("🟢 DB Connected");
     app.listen({ port: 3000 }, () => {
-      console.log(`🚗 Server running on port ${3000}`);
+      console.log(`Server running on port 3000`);
     });
   })
 
   .catch((err) => {
-    console.log("🔴 There was an error on the DB connection method.");
+    console.log("There was an error on the DB connection method.");
     console.log(err);
   });
 
